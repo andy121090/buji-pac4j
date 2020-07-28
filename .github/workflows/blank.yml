@@ -15,10 +15,15 @@ jobs:
     - name: Current time
       run: date
 
-    - name: Command
+    - name: Java version
       run: |
          java -version
+
+    - name: MVN package
+      run: |
          mvn package --settings travis/settings.xml
 
-
+    - name: MVN deploy
+      run: |
+         mvn deploy --settings travis/settings.xml
 
